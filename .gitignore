@@ -1,0 +1,4 @@
+## Plex-Export Ignore ##
+########################
+plex-data/*
+
