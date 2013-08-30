@@ -19,7 +19,7 @@ error_reporting(E_ALL ^ E_NOTICE | E_WARNING);
 // Set-up
 	plex_log('Welcome to the Plex Exporter v'.$plex_export_version);
 	$defaults = array(
-		'plex-url' => 'http://localhost:32400',
+		'plex-url' => 'http://10.69.1.12:32400',
 		'data-dir' => 'plex-data',
 		'thumbnail-width' => 150,
 		'thumbnail-height' => 250,
