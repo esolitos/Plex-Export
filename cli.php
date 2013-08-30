@@ -111,7 +111,6 @@ error_reporting(E_ALL ^ E_NOTICE | E_WARNING);
 
 		foreach($items as $key=>$item) {
 			
-		  //$title_sort = strtolower($item['title']);
 			$title_sort = strtolower($item['titleSort']);
 			$title_first_space = strpos($title_sort, ' ');
 			if($title_first_space>0) {
@@ -234,8 +233,6 @@ function load_data_for_movie($el) {
 	} else {
 	  plex_log('Scanning movie: '.$title . ' ( sortTitle: '.$titleSort.' )');
 	}
-	
-
 
 	$thumb = generate_item_thumbnail(strval($_el->thumb), $key, $title);
 
