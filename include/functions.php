@@ -21,7 +21,7 @@ function load_data_for_movie($el) {
 	  plex_log('Scanning movie: '.$title . ' ( sortTitle: '.$titleSort.' )');
 	}
 
-	$thumb = generate_item_thumbnail(strval($_el->thumb), $key, $title);
+	$thumb = generate_item_thumbnail(strval($_el->thumb), $key, 'mov', $title);
 
 	$item = array(
 		'key' => $key,
@@ -113,7 +113,7 @@ function load_data_for_show($el) {
 	  plex_log('Scanning show: '.$title . ' ( sortTitle: '.$titleSort.' )');
 	}
 
-	$thumb = generate_item_thumbnail(strval($_el->thumb), $key, $title);
+	$thumb = generate_item_thumbnail(strval($_el->thumb), $key, 'show', $title);
 
 	$item = array(
 		'key' => $key,
@@ -336,11 +336,11 @@ function load_xml_from_url($url) {
 /**
  * Load a thumbnail via Plex API and save
  **/
-function generate_item_thumbnail($thumb_url, $key, $title) {
+function generate_item_thumbnail($thumb_url, $key, $type, $title) {
 
 	global $options;
 
-	$filename = '/thumb_'.$key.'.jpeg';
+	$filename = '/'.$type.'_thumb_'.$key.'.jpeg';
 	$save_filename = $options['absolute-data-dir'].$filename;
 	$return_filename = $options['data-dir'].$filename;
 
